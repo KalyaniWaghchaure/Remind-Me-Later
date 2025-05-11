@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remind Me Later API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Remind Me Later API</h1>
+    <p>Welcome to the Remind Me Later API. This API allows you to create and manage reminders.</p>
+    
+    <h2>API Endpoints:</h2>
+    <table>
+        <tr>
+            <th>Endpoint</th>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><a href="/api/reminders/">/api/reminders/</a></td>
+            <td>GET</td>
+            <td>List all reminders</td>
+        </tr>
+        <tr>
+            <td>/api/reminders/</td>
+            <td>POST</td>
+            <td>Create a new reminder</td>
+        </tr>
+        <tr>
+            <td>/api/reminders/{id}/</td>
+            <td>GET</td>
+            <td>Retrieve a specific reminder</td>
+        </tr>
+        <tr>
+            <td>/api/reminders/{id}/</td>
+            <td>PUT</td>
+            <td>Update a specific reminder</td>
+        </tr>
+        <tr>
+            <td>/api/reminders/{id}/</td>
+            <td>DELETE</td>
+            <td>Delete a specific reminder</td>
+        </tr>
+    </table>
+    
+    <h2>Example Request:</h2>
+    <pre>
+POST /api/reminders/
+Content-Type: application/json
+
+{
+    "date": "2025-05-15",
+    "time": "14:30:00",
+    "message": "Call the doctor",
+    "reminder_method": "sms",
+    "recipient": "+1234567890"
+}
+    </pre>
+    
+    <h2>Example Response:</h2>
+    <pre>
+{
+    "status": "success",
+    "message": "Reminder created successfully",
+    "data": {
+        "id": 1,
+        "date": "2025-05-15",
+        "time": "14:30:00",
+        "message": "Call the doctor",
+        "reminder_method": "sms",
+        "recipient": "+1234567890",
+        "created_at": "2025-05-11T12:00:00Z",
+        "is_sent": false
+    }
+}
+    </pre>
+</body>
+</html>
